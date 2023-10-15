@@ -1,0 +1,17 @@
+version: '3.3'
+services:
+  mysql-todos:
+    image: mysql:8.0
+    container_name: mysql-library
+    environment:
+      MYSQL_ROOT_PASSWORD: dummypassword
+      MYSQL_DATABASE: reactlibrarydatabase
+      MYSQL_USER: root
+      MYSQL_PASSWORD: dummypassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:
